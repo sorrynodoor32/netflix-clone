@@ -1,0 +1,26 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build_job:
+  stage: build
+  script:
+    - echo "Printing custom GitLab CI/CD variables:"
+    - echo "$MY_VARIABLE"
+  only:
+    - main
+
+test_job:
+  stage: test
+  script:
+    - echo "Running tests..."
+  only:
+    - main
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Deploying the project..."
+  only:
+    - main
